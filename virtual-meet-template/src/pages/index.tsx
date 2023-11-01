@@ -39,7 +39,7 @@ const OptionsGrid = () => {
 
 function Hub() {
     const { isConnected, address } = useAppContext();
-    const { handleConnect, handleDisconnect } = useAuth();
+    const { handleConnect, handleDisconnect, address: newAdress } = useAuth();
 
     return (
         <main className={styles.main}>
@@ -50,7 +50,7 @@ function Hub() {
                     </h1>
                     <p className="text-2xl text-center">
                         {isConnected
-                            ? `Your address is ${address}`
+                            ? `Your address is ${newAdress}`
                             : "Please connect your wallet"}
                     </p>
 
