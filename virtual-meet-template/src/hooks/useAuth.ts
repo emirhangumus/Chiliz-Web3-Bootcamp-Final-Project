@@ -13,10 +13,10 @@ export function useAuth() {
     const handleConnect = async () => {
         try {
             if (isConnected) {
-                handleConnect();
+                await handleConnect();
             }
     
-            connect();
+            await connect();
             setAddress(address ?? "");
             setIsConnected(true);
         } catch (error) {
@@ -30,7 +30,7 @@ export function useAuth() {
                 return;
             }
     
-            disconnect();
+            await disconnect();
             setAddress("");
             setIsConnected(false);
         } catch (error) {
@@ -39,7 +39,7 @@ export function useAuth() {
     };
 
     return {
-        address1: address,
+        address,
         isConnected,
         handleConnect,
         handleDisconnect,

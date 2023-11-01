@@ -41,6 +41,9 @@ function Hub() {
     const { isConnected, address } = useAppContext();
     const { handleConnect, handleDisconnect } = useAuth();
 
+    console.log(address);
+    
+
     return (
         <main className={styles.main}>
             <div className={styles.center}>
